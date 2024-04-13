@@ -1,0 +1,139 @@
+:root {
+  /* --chess-color-light: #dfc198;
+  --chess-color-dark: #623111; */
+  --chess-board-color-light: #f7f5f5;
+  --chess-board-color-dark: #dbdbdb;
+  --chess-queen-color: #e0c426;
+  --chess-queen-active-color: #fce669;
+  --chess-queen-size: 24px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+table {
+  border-spacing: 0;
+  border: 1px solid #c3cfe2;
+}
+
+table tr td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+table tr:nth-child(even) td:nth-child(even),
+table tr:nth-child(odd) td:nth-child(odd) {
+  background-color: var(--chess-board-color-light);
+}
+
+table tr:nth-child(odd) td:nth-child(even),
+table tr:nth-child(even) td:nth-child(odd) {
+  background-color: var(--chess-board-color-dark);
+}
+
+svg {
+  width: var(--chess-queen-size);
+  height: var(--chess-queen-size);
+  cursor: pointer;
+}
+
+path {
+  fill: var(--chess-queen-color);
+  transition: 0.3s;
+}
+
+#chess_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+#queens_container {
+  background-color: #efefef;
+  justify-self: center;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  width: fit-content;
+  cursor: pointer;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+#queens_and_values_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+}
+
+input[type='radio'] {
+  display: none;
+  visibility: hidden;
+}
+
+label {
+  transition: 0.9s;
+}
+
+label.checked path {
+  fill: var(--chess-queen-active-color);
+}
+
+#buttons {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #c3cfe2;
+  color: #333;
+  transition: 0.5s;
+}
+
+button:hover {
+  width: 120px;
+}
+
+button#finish {
+  background-color: #dbdbdb;
+}
+
+button#reset {
+  background-color: #dbdbdb;
+}
+
+button#solve {
+  background-color: #c3cfe2;
+}
+
+select {
+  background-color: #e0c426;
+  cursor: pointer;
+  width: 32px;
+  height: 52px;
+  border-radius: 8px;
+  background-color: #dbdbdb;
+  border: 1px solid #c3cfe2;
+  outline: none;
+  padding: 0;
+  /* margin: 0 16px; */
+}
