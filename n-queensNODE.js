@@ -68,3 +68,5 @@ let solutions = dfs(4);
 solutions.forEach(solution => {
     console.log(solution);
 });
+
+export default dfs;

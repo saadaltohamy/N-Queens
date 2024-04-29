@@ -2,7 +2,7 @@ const select = document.getElementById('queens_select');
 const chessDiv = document.getElementById('chess_div');
 let labels = [];
 import nQueens from './n-queens-logic.js';
-import dfs from './n-queens-logic.js';
+import dfs from './n-queensNODE.js';
 let solutions;
 
 function generate_table(e, val) {
