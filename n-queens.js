@@ -2,6 +2,7 @@ const select = document.getElementById('queens_select');
 const chessDiv = document.getElementById('chess_div');
 let labels = [];
 import nQueens from './n-queens-logic.js';
+import dfs from './n-queens-logic.js';
 let solutions;
 
 function generate_table(e, val) {
@@ -17,7 +18,7 @@ function generate_table(e, val) {
     value = 4;
   }
 
-  solutions = nQueens(value);
+  solutions = dfs(value);
 
   const oldQueensContainer = document.getElementById('queens_container');
   if (oldQueensContainer) {
@@ -225,8 +226,8 @@ function solveClicked(e) {
   const resetButton = document.getElementById('reset');
   resetButton.click();
 
-  const solution = solutions[0];
-
+  const randomIndex = Math.floor(Math.random() * solutions.length);
+  const solution = solutions[randomIndex];
   const labels1 = document.querySelectorAll('#queens_container label');
   const labels2 = document.querySelectorAll('#queens_table label');
 
